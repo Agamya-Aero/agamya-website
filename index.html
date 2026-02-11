@@ -18,28 +18,81 @@
             background: #f4f6f9;
             color: #333;
         }
+
+        /* SIDEBAR */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            background-color: #0f172a;
+            padding-top: 20px;
+        }
+
+        .sidebar img {
+            display: block;
+            margin: 0 auto 10px auto;
+            height: 120px;
+        }
+
+        .sidebar h3 {
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a, .dropdown-btn {
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .sidebar a:hover, .dropdown-btn:hover {
+            background-color: #1e293b;
+        }
+
+        .dropdown-container {
+            display: none;
+            background-color: #1e293b;
+        }
+
+        .dropdown-container a {
+            padding-left: 40px;
+            font-size: 14px;
+        }
+
+        /* MAIN CONTENT SHIFT */
+        .main-content {
+            margin-left: 250px;
+        }
+
         header {
             background: #0f172a;
             color: white;
             padding: 20px;
             text-align: center;
         }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+
         section {
             padding: 50px 20px;
             text-align: center;
         }
+
         .services, .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
+
         .card {
             background: white;
             padding: 20px;
@@ -47,19 +100,23 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
+
         .gallery img {
             width: 100%;
             border-radius: 6px;
         }
+
         footer {
             background: #0f172a;
             color: white;
             padding: 20px;
             text-align: center;
         }
+
         .contact-info p {
             margin: 8px 0;
         }
+
         .btn {
             display: inline-block;
             margin-top: 15px;
@@ -71,21 +128,30 @@
         }
     </style>
 </head>
+
 <body>
 
-<header style="display:flex; flex-direction:column; align-items:center;">
-    <img src="Logo.png" alt="Agamya Logo" style="height:220px; margin-bottom:5px;">
-<h2 style="color:white; font-weight:600; letter-spacing:3px; margin:-15px 0 15px 0; font-size:18px;">
-    THE ART OF PRECISION
-</h2>
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <img src="Logo.png" alt="Agamya Logo">
+    <h3>THE ART OF PRECISION</h3>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
+    <button class="dropdown-btn">About ▼</button>
+    <div class="dropdown-container">
+        <a href="#about">About Us</a>
+    </div>
+
+    <button class="dropdown-btn">Services ▼</button>
+    <div class="dropdown-container">
+        <a href="#services">Our Services</a>
         <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    </div>
+
+    <a href="#contact">Contact</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
 
 <section id="about">
     <h2>About Us</h2>
@@ -142,7 +208,6 @@
         <p><strong>Phone:</strong> +91-8217792498</p>
         <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
 
-        <!-- LinkedIn Section START -->
         <div style="margin-top:20px;">
             <p style="margin-bottom:8px;">Follow us on</p>
             <a href="https://www.linkedin.com/in/agamya-the-art-of-precision-717414392/" target="_blank"
@@ -152,8 +217,6 @@
                 LinkedIn
             </a>
         </div>
-        <!-- LinkedIn Section END -->
-
     </div>
 </section>
 
@@ -161,5 +224,24 @@
     <p>© 2026 Agamya | The Art of Precision</p>
 </footer>
 
+</div>
+
+<!-- DROPDOWN SCRIPT -->
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+
+for (var i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    });
+}
+</script>
+
 </body>
 </html>
+
