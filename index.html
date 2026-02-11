@@ -5,187 +5,181 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agamya | The Art of Precision</title>
 
+<!-- SEO Meta Tags -->
+<meta name="description" content="Agamya - The Art of Precision. Manufacturing partner for aerospace tooling, precision components and automotive industries in Bangalore.">
+<meta name="keywords" content="Aerospace Tooling Bangalore, Precision Components India, CNC Machining, Automotive Manufacturing, Agamya">
+<meta name="author" content="Agamya">
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    color: #333;
-}
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background: #f4f6f9;
+        color: #333;
+    }
 
-/* SIDEBAR */
-.sidebar {
-    height: 100vh;
-    width: 250px;
-    position: fixed;
-    background-color: #0f172a;
-    padding-top: 40px;
-    transition: 0.3s;
-    overflow-x: hidden;
-    z-index: 1000;
-}
-
-.sidebar a, .dropdown-btn {
-    padding: 12px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    color: white;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-}
-
-.sidebar a:hover, .dropdown-btn:hover {
-    background-color: #1e293b;
-}
-
-.dropdown-container {
-    display: none;
-    background-color: #1e293b;
-}
-
-.dropdown-container a {
-    padding-left: 40px;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-}
-
-/* MAIN CONTENT */
-.main-content {
-    margin-left: 250px;
-    transition: 0.3s;
-}
-
-/* HEADER BAR WITH LOGO & TAGLINE AT TOP */
-.main-header {
-    text-align: center;
-    background: #0f172a;
-    color: white;
-    padding: 20px 20px 10px 20px; /* reduced bottom padding */
-    border-radius: 0; /* removed radius */
-    font-family: Arial, sans-serif;
-}
-
-.main-header img {
-    height: 120px;
-    display: block;
-    margin: 0 auto 5px auto;
-}
-
-.main-header h2 {
-    font-weight: 600;
-    letter-spacing: 4px;
-    font-size: 16px;
-    margin: 0;
-}
-
-/* SECTIONS */
-section {
-    padding: 50px 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-.services, .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    width: 280px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 6px;
-}
-
-footer {
-    background: #0f172a;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-/* BUTTONS */
-.contact-info p {
-    margin: 8px 0;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #0f172a;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* MOBILE HEADER */
-.mobile-header {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #0f172a;
-    color: white;
-    padding: 15px 20px;
-    z-index: 1001;
-    align-items: center;
-}
-
-.hamburger {
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* MEDIA QUERY FOR MOBILE */
-@media screen and (max-width: 768px) {
+    /* SIDEBAR */
     .sidebar {
+        height: 100vh;
         width: 250px;
-        height: 100%;
         position: fixed;
-        top: 60px; /* start below mobile header */
-        left: -250px;
-        padding-top: 20px;
+        left: 0;
+        top: 0;
+        background-color: #0f172a;
+        padding-top: 40px;
+        transition: 0.3s;
+        overflow-x: hidden;
         z-index: 1000;
     }
+
+    .sidebar a, .dropdown-btn {
+        padding: 12px 20px;
+        text-decoration: none;
+        font-size: 16px;
+        color: white;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .sidebar a:hover, .dropdown-btn:hover {
+        background-color: #1e293b;
+    }
+
+    .dropdown-container {
+        display: none;
+        background-color: #1e293b;
+    }
+
+    .dropdown-container a {
+        padding-left: 40px;
+        font-size: 14px;
+    }
+
+    /* MAIN CONTENT SHIFT */
     .main-content {
-        margin-left: 0;
+        margin-left: 250px;
+        transition: 0.3s;
     }
-    .mobile-header {
+
+    /* MAIN HEADER */
+    .main-header {
+        text-align: center;
+        padding: 20px 20px 20px 20px;
+        background: #0f172a;
+        color: white;
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-}
+
+    .main-header img {
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+    .main-header h1 {
+        font-weight: bold;
+        font-size: 22px;
+        margin: 0;
+        letter-spacing: 2px;
+    }
+
+    section {
+        padding: 50px 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .services, .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        width: 280px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+    }
+
+    .gallery img {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    footer {
+        background: #0f172a;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .contact-info p {
+        margin: 8px 0;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #0f172a;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    /* MOBILE HAMBURGER BUTTON */
+    .mobile-hamburger {
+        display: none;
+        font-size: 26px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1002;
+    }
+
+    /* MEDIA QUERY FOR MOBILE */
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 0;
+            height: 100%;
+            padding-top: 60px;
+            top: 0;
+            left: 0;
+        }
+        .main-content {
+            margin-left: 0;
+        }
+        .mobile-hamburger {
+            display: block;
+        }
+        .main-header {
+            padding: 60px 20px 20px 20px;
+        }
+    }
 </style>
 </head>
 
 <body>
 
-<!-- MOBILE HEADER -->
-<div class="mobile-header">
-    <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <span style="color:white; font-weight:bold; margin-left:10px;">Agamya</span>
-</div>
-
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
     <a href="#home" onclick="closeSidebar()">Home</a>
+
     <button class="dropdown-btn">About ▼</button>
     <div class="dropdown-container">
         <a href="#about" onclick="closeSidebar()">About Us</a>
@@ -198,21 +192,29 @@ footer {
     </div>
 
     <a href="#contact" onclick="closeSidebar()">Contact</a>
+
+    <!-- LinkedIn -->
+    <div style="margin-top:20px; padding-left:20px;">
+        <a href="https://www.linkedin.com/in/agamya-the-art-of-precision-717414392/" target="_blank"
+           style="display:inline-flex; align-items:center; text-decoration:none; color:#0A66C2; font-weight:bold;">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                 alt="LinkedIn" width="22" style="margin-right:8px;">
+            LinkedIn
+        </a>
+    </div>
 </div>
 
 <!-- MAIN CONTENT -->
-<div class="main-content" id="mainContent">
+<div class="main-content">
 
-    <!-- HEADER WITH LOGO & TAGLINE AT TOP -->
+    <!-- HEADER WITH HAMBURGER -->
     <div class="main-header">
+        <button class="mobile-hamburger" onclick="toggleSidebar()">☰</button>
         <img src="Logo.png" alt="Agamya Logo">
-        <h2>THE ART OF PRECISION</h2>
+        <h1>WELCOME TO AGAMYA</h1>
     </div>
 
-    <section id="home">
-        <h2>Welcome to <strong>AGAMYA</strong></h2>
-        <p>Your trusted partner in aerospace tooling, precision components, and automotive manufacturing.</p>
-    </section>
+    <section id="home"></section>
 
     <section id="about">
         <h2>About Us</h2>
@@ -266,17 +268,6 @@ footer {
             <p><strong>Email:</strong> agamyaaero@gmail.com</p>
             <p><strong>Phone:</strong> +91-8217792498</p>
             <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
-
-            <!-- LinkedIn -->
-            <div style="margin-top:20px;">
-                <p style="margin-bottom:8px;">Follow us on</p>
-                <a href="https://www.linkedin.com/in/agamya-the-art-of-precision-717414392/" target="_blank"
-                   style="display:inline-flex; align-items:center; text-decoration:none; color:#0A66C2; font-weight:bold;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-                         alt="LinkedIn" width="22" style="margin-right:8px;">
-                    LinkedIn
-                </a>
-            </div>
         </div>
     </section>
 
@@ -286,30 +277,35 @@ footer {
 
 </div>
 
+<!-- DROPDOWN + MOBILE SCRIPT -->
 <script>
-// Dropdown toggle
 var dropdown = document.getElementsByClassName("dropdown-btn");
 for (var i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", function() {
         var dropdownContent = this.nextElementSibling;
-        dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
     });
 }
 
-// Mobile sidebar toggle
+// MOBILE SIDEBAR TOGGLE
 function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
-    if(sidebar.style.left === "0px") {
-        sidebar.style.left = "-250px";
+    if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
     } else {
-        sidebar.style.left = "0px";
+        sidebar.style.width = "250px";
     }
 }
 
-// Close sidebar after clicking any link (mobile only)
+// CLOSE SIDEBAR ON MENU CLICK (MOBILE)
 function closeSidebar() {
-    if(window.innerWidth <= 768) {
-        document.getElementById("sidebar").style.left = "-250px";
+    var sidebar = document.getElementById("sidebar");
+    if (window.innerWidth <= 768) {
+        sidebar.style.width = "0";
     }
 }
 </script>
