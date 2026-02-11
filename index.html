@@ -72,11 +72,25 @@ body {
 
 /* HEADER BAR WITH LOGO & TAGLINE AT TOP */
 .main-header {
+    text-align: center;
     background: #0f172a;
     color: white;
     padding: 15px 20px;
     border-radius: 0; /* removed radius */
     position: relative;
+}
+
+.main-header img {
+    height: 120px;
+    display: block;
+    margin: 0 auto 5px auto;
+}
+
+.main-header h2 {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 16px;
+    margin: 0;
 }
 
 /* Hamburger inside header */
@@ -89,27 +103,6 @@ body {
     position: absolute;
     left: 20px;
     top: 20px;
-}
-
-/* Container to align logo & tagline with content width */
-.header-container {
-    display: flex;
-    flex-direction: column; /* stacked vertically */
-    align-items: flex-start; /* align with section content */
-    max-width: 900px;        /* same width as main content */
-    margin: 0 auto;          /* center in page */
-    gap: 10px;               /* space between logo and tagline */
-}
-
-.header-container img {
-    height: 150px; /* bigger logo */
-}
-
-.header-container h2 {
-    font-weight: 600;
-    letter-spacing: 4px;
-    font-size: 18px;
-    margin: 0;
 }
 
 /* SECTIONS */
@@ -175,9 +168,6 @@ footer {
     .main-content {
         margin-left: 0;
     }
-    .header-container {
-        align-items: center; /* center logo/tagline on mobile */
-    }
 }
 </style>
 </head>
@@ -187,10 +177,8 @@ footer {
 <!-- MAIN HEADER WITH LOGO, TAGLINE, AND HAMBURGER -->
 <div class="main-header">
     <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <div class="header-container">
-        <img src="Logo.png" alt="Agamya Logo">
-        <h2>THE ART OF PRECISION</h2>
-    </div>
+    <img src="Logo.png" alt="Agamya Logo">
+    <h2>THE ART OF PRECISION</h2>
 </div>
 
 <!-- SIDEBAR -->
