@@ -72,24 +72,31 @@ body {
 
 /* HEADER BAR WITH LOGO & TAGLINE AT TOP */
 .main-header {
-    text-align: center;
+    text-align: left;   /* align with sections */
     background: #0f172a;
     color: white;
-    padding: 15px 20px;
+    padding: 20px;
     border-radius: 0; /* removed radius */
     position: relative;
 }
 
-.main-header img {
-    height: 120px;
-    display: block;
-    margin: 0 auto 5px auto;
+/* Container to align logo and tagline with content width */
+.header-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;  /* same width as main content */
+    margin: 0 auto;    /* center container */
+    gap: 20px;
 }
 
-.main-header h2 {
+.header-container img {
+    height: 150px; /* bigger logo */
+}
+
+.header-container h2 {
     font-weight: 600;
     letter-spacing: 4px;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
 }
 
@@ -168,6 +175,11 @@ footer {
     .main-content {
         margin-left: 0;
     }
+    /* For mobile, logo stacks naturally */
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 </style>
 </head>
@@ -177,8 +189,10 @@ footer {
 <!-- MAIN HEADER WITH LOGO, TAGLINE, AND HAMBURGER -->
 <div class="main-header">
     <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <img src="Logo.png" alt="Agamya Logo">
-    <h2>THE ART OF PRECISION</h2>
+    <div class="header-container">
+        <img src="Logo.png" alt="Agamya Logo">
+        <h2>THE ART OF PRECISION</h2>
+    </div>
 </div>
 
 <!-- SIDEBAR -->
