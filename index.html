@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agamya | The Art of Precision</title>
-
 <style>
-    html, body {
+html, body {
     height: 100%;
 }
 body {
@@ -27,13 +26,14 @@ body {
     overflow-x: hidden;
     z-index: 1000;
 }
-    @media screen and (min-width: 769px) {
+
+/* DESKTOP FULL HEIGHT FIX */
+@media screen and (min-width: 769px) {
     .sidebar {
-        height: 100vh;
-        top: 0; 
-     }
+        height: 100vh; /* ensures sidebar always fills viewport on desktop */
+        top: 0;        /* start from top */
+    }
 }
-</style>
 
 .sidebar a, .dropdown-btn {
     padding: 12px 20px;
