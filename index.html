@@ -64,16 +64,19 @@
         transition: 0.3s;
     }
 
-    /* CENTERED HEADER */
+    /* CENTERED HEADER - NARROW BAR */
     .main-header {
         text-align: center;
-        padding: 60px 20px 40px 20px;
+        padding: 40px 20px;
         background: #0f172a;
         color: white;
+        max-width: 700px;       /* narrower width */
+        margin: 40px auto;       /* center horizontally with some spacing */
+        border-radius: 10px;     /* optional rounded corners */
     }
 
     .main-header img {
-        height: 200px;
+        height: 180px;
         margin-bottom: 15px;
     }
 
@@ -163,6 +166,15 @@
         }
         .mobile-header {
             display: flex;
+        }
+        /* header bar narrower on small screens */
+        .main-header {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 30px 10px;
+        }
+        .main-header img {
+            height: 140px;
         }
     }
 </style>
