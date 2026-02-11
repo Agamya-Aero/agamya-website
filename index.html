@@ -20,7 +20,7 @@ body {
     position: fixed;
     background-color: #0f172a;
     padding-top: 40px;
-    transition: left 0.3s ease;
+    transition: 0.3s;
     overflow-x: hidden;
     z-index: 1000;
 }
@@ -65,9 +65,8 @@ body {
     text-align: center;
     background: #0f172a;
     color: white;
-    padding: 20px 20px 10px 20px;
-    border-radius: 0;
-    font-family: Arial, sans-serif;
+    padding: 15px 20px;
+    border-radius: 0; /* removed radius */
     position: relative;
 }
 
@@ -82,6 +81,18 @@ body {
     letter-spacing: 4px;
     font-size: 16px;
     margin: 0;
+}
+
+/* Hamburger inside header */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 20px;
 }
 
 /* SECTIONS */
@@ -133,45 +144,19 @@ footer {
     border-radius: 5px;
 }
 
-/* MOBILE HEADER */
-.mobile-header {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #0f172a;
-    color: white;
-    padding: 15px 20px;
-    z-index: 1001;
-    align-items: center;
-}
-
-.hamburger {
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 5px 10px;
-}
-
 /* MEDIA QUERY FOR MOBILE */
 @media screen and (max-width: 768px) {
     .sidebar {
         width: 250px;
         height: 100%;
         position: fixed;
-        top: 60px;
+        top: 0;
         left: -250px;
-        padding-top: 20px;
+        padding-top: 60px; /* space for header content */
         z-index: 1000;
     }
     .main-content {
         margin-left: 0;
-    }
-    .mobile-header {
-        display: flex;
     }
 }
 </style>
@@ -179,10 +164,11 @@ footer {
 
 <body>
 
-<!-- MOBILE HEADER -->
-<div class="mobile-header">
+<!-- MAIN HEADER WITH LOGO, TAGLINE, AND HAMBURGER -->
+<div class="main-header">
     <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <span style="color:white; font-weight:bold; margin-left:10px;">Agamya</span>
+    <img src="Logo.png" alt="Agamya Logo">
+    <h2>THE ART OF PRECISION</h2>
 </div>
 
 <!-- SIDEBAR -->
@@ -202,12 +188,6 @@ footer {
 
 <!-- MAIN CONTENT -->
 <div class="main-content" id="mainContent">
-
-    <!-- HEADER WITH LOGO & TAGLINE AT TOP -->
-    <div class="main-header">
-        <img src="Logo.png" alt="Agamya Logo">
-        <h2>THE ART OF PRECISION</h2>
-    </div>
 
     <section id="home">
         <h2>Welcome to <strong>AGAMYA</strong></h2>
@@ -299,11 +279,7 @@ for (var i = 0; i < dropdown.length; i++) {
 // Mobile sidebar toggle
 function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
-    if(sidebar.style.left === "0px") {
-        sidebar.style.left = "-250px";
-    } else {
-        sidebar.style.left = "0px";
-    }
+    sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
 }
 
 // Close sidebar after clicking any link (mobile only)
