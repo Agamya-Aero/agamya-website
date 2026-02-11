@@ -5,156 +5,169 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agamya | The Art of Precision</title>
 
+<!-- SEO Meta Tags -->
+<meta name="description" content="Agamya - The Art of Precision. Manufacturing partner for aerospace tooling, precision components and automotive industries in Bangalore.">
+<meta name="keywords" content="Aerospace Tooling Bangalore, Precision Components India, CNC Machining, Automotive Manufacturing, Agamya">
+<meta name="author" content="Agamya">
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-}
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background: #f4f6f9;
+        color: #333;
+    }
 
-/* SIDEBAR */
-.sidebar {
-    height: 100vh;
-    width: 250px;
-    position: fixed;
-    background-color: #0f172a;
-    padding-top: 40px;
-    z-index: 1000;
-    overflow-x: hidden;
-}
+    /* SIDEBAR */
+    .sidebar {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        background-color: #0f172a;
+        padding-top: 40px;
+        transition: 0.3s;
+        overflow-x: hidden;
+        z-index: 1000;
+    }
 
-.sidebar a, .dropdown-btn {
-    padding: 12px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    color: white;
-    display: block;
-    background: none;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-}
+    .sidebar a, .dropdown-btn {
+        padding: 12px 20px;
+        text-decoration: none;
+        font-size: 16px;
+        color: white;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+    }
 
-.sidebar a:hover, .dropdown-btn:hover {
-    background-color: #1e293b;
-}
+    .sidebar a:hover, .dropdown-btn:hover {
+        background-color: #1e293b;
+    }
 
-.dropdown-container {
-    display: none;
-    background-color: #1e293b;
-}
+    .dropdown-container {
+        display: none;
+        background-color: #1e293b;
+    }
 
-.dropdown-container a {
-    padding-left: 40px;
-    font-size: 14px;
-}
+    .dropdown-container a {
+        padding-left: 40px;
+        font-size: 14px;
+    }
 
-/* MAIN CONTENT */
-.main-content {
-    margin-left: 250px;
-    padding-top: 20px;
-}
+    /* MAIN CONTENT SHIFT */
+    .main-content {
+        margin-left: 250px;
+        transition: 0.3s;
+    }
 
-/* CENTERED HEADER BAR */
-.main-header {
-    max-width: 700px;
-    margin: 40px auto; /* center horizontally */
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    border-radius: 10px;
-}
+    /* CENTERED HEADER */
+    .main-header {
+        text-align: center;
+        padding: 60px 20px 40px 20px;
+        background: #0f172a;
+        color: white;
+    }
 
-.main-header img {
-    height: 180px;
-    margin-bottom: 15px;
-}
+    .main-header img {
+        height: 200px;
+        margin-bottom: 15px;
+    }
 
-.main-header h2 {
-    font-weight: 600;
-    letter-spacing: 4px;
-    font-size: 18px;
-    margin: 0;
-}
+    .main-header h2 {
+        font-weight: 600;
+        letter-spacing: 4px;
+        font-size: 18px;
+        margin: 0;
+    }
 
-/* SECTIONS */
-section {
-    padding: 50px 20px;
-    text-align: center;
-}
+    section {
+        padding: 50px 20px;
+        text-align: center;
+    }
 
-.services, .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+    .services, .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
 
-.card {
-    background: white;
-    padding: 20px;
-    width: 280px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+    .card {
+        background: white;
+        padding: 20px;
+        width: 280px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
 
-.gallery img {
-    width: 100%;
-    border-radius: 6px;
-}
+    .gallery img {
+        width: 100%;
+        border-radius: 6px;
+    }
 
-footer {
-    background: #0f172a;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+    footer {
+        background: #0f172a;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
 
-.contact-info p {
-    margin: 8px 0;
-}
+    .contact-info p {
+        margin: 8px 0;
+    }
 
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #0f172a;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+    .btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #0f172a;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
 
-/* MOBILE */
-.mobile-header {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #0f172a;
-    color: white;
-    padding: 15px 20px;
-    z-index: 1001;
-    align-items: center;
-}
+    /* MOBILE HEADER */
+    .mobile-header {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #0f172a;
+        color: white;
+        padding: 15px 20px;
+        z-index: 1001;
+        align-items: center;
+    }
 
-.hamburger {
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
+    .hamburger {
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
 
-@media screen and (max-width: 768px) {
-    .sidebar { width: 0; }
-    .main-content { margin-left: 0; }
-    .mobile-header { display: flex; }
-    .main-header { max-width: 90%; padding: 30px 10px; }
-}
+    /* MEDIA QUERY FOR MOBILE */
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 0;
+            padding-top: 60px; /* space for mobile header */
+        }
+        .main-content {
+            margin-left: 0;
+        }
+        .mobile-header {
+            display: flex;
+        }
+    }
 </style>
 </head>
+
 <body>
 
 <!-- MOBILE HEADER -->
@@ -169,18 +182,20 @@ footer {
     <div class="dropdown-container">
         <a href="#about">About Us</a>
     </div>
+
     <button class="dropdown-btn">Services ▼</button>
     <div class="dropdown-container">
         <a href="#services">Our Services</a>
         <a href="#gallery">Gallery</a>
     </div>
+
     <a href="#contact">Contact</a>
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="main-content">
 
-    <!-- CENTERED LOGO + TAGLINE -->
+    <!-- CENTERED LOGO HEADER -->
     <div class="main-header">
         <img src="Logo.png" alt="Agamya Logo">
         <h2>THE ART OF PRECISION</h2>
@@ -188,7 +203,11 @@ footer {
 
     <section id="about">
         <h2>About Us</h2>
-        <p>Agamya is a manufacturing partner specializing in aerospace tooling, precision components, and automotive solutions. We deliver high-quality engineering with commitment to accuracy, reliability and customer satisfaction.</p>
+        <p>
+            Agamya is a manufacturing partner specializing in aerospace tooling, precision components,
+            and automotive solutions. We deliver high-quality engineering with commitment to accuracy,
+            reliability and customer satisfaction.
+        </p>
     </section>
 
     <section id="services">
@@ -216,10 +235,12 @@ footer {
                 <img src="aerospace.png" alt="Aerospace Machining">
                 <p>Aerospace Machining</p>
             </div>
+
             <div class="card">
                 <img src="precision.png" alt="Precision Engineering">
                 <p>Precision Engineering</p>
             </div>
+
             <div class="card">
                 <img src="automotive.png" alt="Automotive Components">
                 <p>Automotive Components</p>
@@ -234,6 +255,16 @@ footer {
             <p><strong>Email:</strong> agamyaaero@gmail.com</p>
             <p><strong>Phone:</strong> +91-8217792498</p>
             <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
+
+            <div style="margin-top:20px;">
+                <p style="margin-bottom:8px;">Follow us on</p>
+                <a href="https://www.linkedin.com/in/agamya-the-art-of-precision-717414392/" target="_blank"
+                   style="display:inline-flex; align-items:center; text-decoration:none; color:#0A66C2; font-weight:bold;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                         alt="LinkedIn" width="22" style="margin-right:8px;">
+                    LinkedIn
+                </a>
+            </div>
         </div>
     </section>
 
@@ -243,21 +274,28 @@ footer {
 
 </div>
 
+<!-- DROPDOWN + MOBILE SCRIPT -->
 <script>
-// Dropdown
 var dropdown = document.getElementsByClassName("dropdown-btn");
-for (var i=0;i<dropdown.length;i++){
-    dropdown[i].addEventListener("click",function(){
-        var content=this.nextElementSibling;
-        if(content.style.display==="block"){ content.style.display="none"; }
-        else{ content.style.display="block"; }
+for (var i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
     });
 }
 
-// Mobile sidebar toggle
-function toggleSidebar(){
+// MOBILE SIDEBAR TOGGLE
+function toggleSidebar() {
     var sidebar = document.getElementsByClassName("sidebar")[0];
-    sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
+    if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+    } else {
+        sidebar.style.width = "250px";
+    }
 }
 </script>
 
