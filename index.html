@@ -241,3 +241,76 @@ footer {
                 <p>Reliable production support for automotive OEMs and Tier suppliers.</p>
             </div>
         </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="card">
+                <img src="aerospace.png" alt="Aerospace Machining">
+                <p>Aerospace Machining</p>
+            </div>
+            <div class="card">
+                <img src="precision.png" alt="Precision Engineering">
+                <p>Precision Engineering</p>
+            </div>
+            <div class="card">
+                <img src="automotive.png" alt="Automotive Components">
+                <p>Automotive Components</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Address:</strong> No.27, 11th Main, 19th Cross, Raghavendra Layout, Kammagondanahalli, Bangalore 560015</p>
+            <p><strong>Email:</strong> agamyaaero@gmail.com</p>
+            <p><strong>Phone:</strong> +91-8217792498</p>
+            <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
+
+            <!-- LinkedIn -->
+            <div style="margin-top:20px;">
+                <p style="margin-bottom:8px;">Follow us on</p>
+                <a href="https://www.linkedin.com/in/agamya-the-art-of-precision-717414392/" target="_blank"
+                   style="display:inline-flex; align-items:center; text-decoration:none; color:#0A66C2; font-weight:bold;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                         alt="LinkedIn" width="22" style="margin-right:8px;">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright © 2026 Agamya | The Art of Precision - All Rights Reserved</p>
+    </footer>
+
+</div>
+
+<script>
+// Dropdown toggle
+var dropdown = document.getElementsByClassName("dropdown-btn");
+for (var i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+        var dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+    });
+}
+
+// Mobile sidebar toggle
+function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+}
+
+// Close sidebar after clicking any link (mobile only)
+function closeSidebar() {
+    if(window.innerWidth <= 768) {
+        document.getElementById("sidebar").style.left = "-250px";
+    }
+}
+</script>
+
+</body>
+</html>
