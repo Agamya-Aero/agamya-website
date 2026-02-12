@@ -7,33 +7,24 @@
 
 <style>
 html, body {
-    height: 100%;
-}
-body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f4f6f9;
     color: #333;
-    padding-top: 140px; /* space for fixed header */
 }
 
-/* SIDEBAR */
+/* ================= SIDEBAR ================= */
 .sidebar {
-    min-height: 100%;
     width: 250px;
+    height: 100vh;
     position: fixed;
+    top: 0;
+    left: 0;
     background-color: #0f172a;
-    padding-top: 40px;
+    padding-top: 80px;
     transition: 0.3s;
     overflow-x: hidden;
     z-index: 1000;
-}
-
-@media screen and (min-width: 769px) {
-    .sidebar {
-        height: 100vh;
-        top: 0;
-    }
 }
 
 .sidebar a, .dropdown-btn {
@@ -63,61 +54,55 @@ body {
     font-size: 14px;
 }
 
-/* MAIN CONTENT */
+/* ================= MAIN CONTENT ================= */
 .main-content {
     margin-left: 250px;
     transition: 0.3s;
 }
 
-/* FIXED HEADER */
+/* ================= HEADER ================= */
 .main-header {
     background: #0f172a;
     color: white;
-    padding: 10px 20px;
-    position: fixed;
+    padding: 15px 20px;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2000;
+    z-index: 1100;
 }
 
-/* Hamburger */
 .hamburger {
-    font-size: 24px;
+    font-size: 26px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
     position: absolute;
     left: 20px;
-    top: 15px;
+    top: 20px;
 }
 
-/* Align header content with main content */
 .header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 900px;
-    margin-left: 250px; /* align with main content */
-    padding-right: 20px;
-    gap: 6px;
+    margin: 0 auto;
+    gap: 10px;
 }
 
 .header-container img {
-    height: 110px; /* slightly reduced for better balance */
+    height: 120px;
 }
 
 .header-container h2 {
-    font-weight: 600;
     letter-spacing: 4px;
     font-size: 16px;
     margin: 0;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 section {
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -148,11 +133,6 @@ footer {
     text-align: center;
 }
 
-/* BUTTONS */
-.contact-info p {
-    margin: 8px 0;
-}
-
 .btn {
     display: inline-block;
     margin-top: 15px;
@@ -163,29 +143,32 @@ footer {
     border-radius: 5px;
 }
 
-/* MOBILE */
+/* ================= MOBILE VIEW ================= */
 @media screen and (max-width: 768px) {
-    body {
-        padding-top: 130px;
-    }
 
     .sidebar {
-        width: 250px;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: -250px;
-        padding-top: 100px;
-        z-index: 1000;
+        width: 100%;
+        left: -100%;
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .sidebar a, .dropdown-btn {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .dropdown-container a {
+        padding-left: 0;
     }
 
     .main-content {
         margin-left: 0;
     }
 
-    .header-container {
-        margin-left: 0;
-        align-items: center;
+    .hamburger {
+        left: 15px;
+        top: 15px;
     }
 }
 </style>
@@ -217,6 +200,9 @@ footer {
         <a href="#gallery" onclick="closeSidebar()">Gallery</a>
     </div>
 
+    <!-- Capacity Added -->
+    <a href="#capacity" onclick="showCapacity()">Capacity</a>
+
     <a href="#contact" onclick="closeSidebar()">Contact</a>
 </div>
 
@@ -232,7 +218,7 @@ footer {
     <h2>About Us</h2>
     <p>
         Agamya is a manufacturing partner specializing in aerospace tooling,
-        precision components, and automotive solutions.
+        precision components and automotive solutions.
     </p>
 </section>
 
@@ -241,12 +227,15 @@ footer {
     <div class="services">
         <div class="card">
             <h3>Aerospace Tooling</h3>
+            <p>Precision tooling solutions for aerospace standards.</p>
         </div>
         <div class="card">
             <h3>Precision Components</h3>
+            <p>Advanced CNC machining solutions.</p>
         </div>
         <div class="card">
             <h3>Automotive Manufacturing</h3>
+            <p>Reliable production support.</p>
         </div>
     </div>
 </section>
@@ -255,25 +244,35 @@ footer {
     <h2>Gallery</h2>
     <div class="gallery">
         <div class="card">
-            <img src="aerospace.png" alt="">
+            <img src="aerospace.png">
+            <p>Aerospace Machining</p>
         </div>
         <div class="card">
-            <img src="precision.png" alt="">
+            <img src="precision.png">
+            <p>Precision Engineering</p>
         </div>
         <div class="card">
-            <img src="automotive.png" alt="">
+            <img src="automotive.png">
+            <p>Automotive Components</p>
         </div>
     </div>
 </section>
 
+<!-- Capacity Hidden Until Click -->
+<section id="capacity" style="display:none;">
+    <h2>Our Capacity</h2>
+    <p>• 3 Axis CNC Machines</p>
+    <p>• 5 Axis CNC Machines</p>
+    <p>• Turning Centers</p>
+    <p>• Quality Inspection Equipment</p>
+</section>
+
 <section id="contact">
     <h2>Contact Us</h2>
-    <div class="contact-info">
-        <p><strong>Address:</strong> Bangalore 560015</p>
-        <p><strong>Email:</strong> agamyaaero@gmail.com</p>
-        <p><strong>Phone:</strong> +91-8217792498</p>
-        <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
-    </div>
+    <p><strong>Address:</strong> Bangalore, India</p>
+    <p><strong>Email:</strong> agamyaaero@gmail.com</p>
+    <p><strong>Phone:</strong> +91-8217792498</p>
+    <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
 </section>
 
 <footer>
@@ -283,25 +282,38 @@ footer {
 </div>
 
 <script>
+// Dropdown
 var dropdown = document.getElementsByClassName("dropdown-btn");
 for (var i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", function() {
-        var dropdownContent = this.nextElementSibling;
-        dropdownContent.style.display =
-        (dropdownContent.style.display === "block") ? "none" : "block";
+        var content = this.nextElementSibling;
+        content.style.display = (content.style.display === "block") ? "none" : "block";
     });
 }
 
+// Toggle Sidebar
 function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
-    sidebar.style.left =
-    (sidebar.style.left === "0px") ? "-250px" : "0px";
+
+    if (window.innerWidth <= 768) {
+        sidebar.style.left = (sidebar.style.left === "0%") ? "-100%" : "0%";
+    } else {
+        sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+    }
 }
 
+// Close Sidebar
 function closeSidebar() {
-    if(window.innerWidth <= 768) {
-        document.getElementById("sidebar").style.left = "-250px";
+    if (window.innerWidth <= 768) {
+        document.getElementById("sidebar").style.left = "-100%";
     }
+}
+
+// Show Capacity Only When Clicked
+function showCapacity() {
+    document.getElementById("capacity").style.display = "block";
+    closeSidebar();
+    document.getElementById("capacity").scrollIntoView({ behavior: "smooth" });
 }
 </script>
 
