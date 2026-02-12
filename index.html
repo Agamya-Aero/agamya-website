@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agamya | The Art of Precision</title>
+
 <style>
 html, body {
     height: 100%;
@@ -13,26 +14,66 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
     color: #333;
+    padding-top: 190px; /* Space for fixed header */
+}
+
+/* FIXED HEADER */
+.main-header {
+    background: #0f172a;
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
+/* Hamburger */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+/* Header content */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.header-container img {
+    height: 150px;
+}
+
+.header-container h2 {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 18px;
+    margin: 0;
 }
 
 /* SIDEBAR */
 .sidebar {
-    min-height: 100%;
     width: 250px;
     position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
     background-color: #0f172a;
-    padding-top: 40px;
+    padding-top: 200px;
     transition: 0.3s;
     overflow-x: hidden;
-    z-index: 1000;
-}
-
-/* DESKTOP FULL HEIGHT FIX */
-@media screen and (min-width: 769px) {
-    .sidebar {
-        height: 100vh; /* ensures sidebar always fills viewport on desktop */
-        top: 0;        /* start from top */
-    }
+    z-index: 1500;
 }
 
 .sidebar a, .dropdown-btn {
@@ -46,7 +87,6 @@ body {
     width: 100%;
     text-align: left;
     cursor: pointer;
-    font-family: Arial, sans-serif;
 }
 
 .sidebar a:hover, .dropdown-btn:hover {
@@ -61,62 +101,17 @@ body {
 .dropdown-container a {
     padding-left: 40px;
     font-size: 14px;
-    font-family: Arial, sans-serif;
 }
 
 /* MAIN CONTENT */
 .main-content {
-    margin-left: 250px;
     transition: 0.3s;
-}
-
-/* HEADER BAR WITH LOGO & TAGLINE AT TOP */
-.main-header {
-    background: #0f172a;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 0; /* removed radius */
-    position: relative;
-}
-
-/* Hamburger inside header */
-.hamburger {
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-}
-
-/* Container to align logo & tagline with content width */
-.header-container {
-    display: flex;
-    flex-direction: column; /* stacked vertically */
-    align-items: center;    /* CENTER logo & tagline horizontally */
-    max-width: 900px;       /* same width as main content */
-    margin: 0 auto;         /* center in page */
-    gap: 10px;              /* space between logo and tagline */
-}
-
-.header-container img {
-    height: 150px; /* bigger logo */
-}
-
-.header-container h2 {
-    font-weight: 600;
-    letter-spacing: 4px;
-    font-size: 18px;
-    margin: 0;
 }
 
 /* SECTIONS */
 section {
     padding: 50px 20px;
     text-align: center;
-    font-family: Arial, sans-serif;
 }
 
 .services, .gallery {
@@ -146,7 +141,6 @@ footer {
     text-align: center;
 }
 
-/* BUTTONS */
 .contact-info p {
     margin: 8px 0;
 }
@@ -161,22 +155,13 @@ footer {
     border-radius: 5px;
 }
 
-/* MEDIA QUERY FOR MOBILE */
-@media screen and (max-width: 768px) {
+/* DESKTOP SIDEBAR ALWAYS VISIBLE */
+@media screen and (min-width: 769px) {
     .sidebar {
-        width: 250px;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: -250px;
-        padding-top: 60px; /* space for header content */
-        z-index: 1000;
+        left: 0;
     }
     .main-content {
-        margin-left: 0;
-    }
-    .header-container {
-        align-items: center; /* keep logo/tagline centered on mobile */
+        margin-left: 250px;
     }
 }
 </style>
@@ -184,7 +169,7 @@ footer {
 
 <body>
 
-<!-- MAIN HEADER WITH LOGO, TAGLINE, AND HAMBURGER -->
+<!-- HEADER -->
 <div class="main-header">
     <button class="hamburger" onclick="toggleSidebar()">☰</button>
     <div class="header-container">
@@ -195,95 +180,75 @@ footer {
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-    <a href="#home" onclick="closeSidebar()">Home</a>
+    <a href="#" onclick="showHome()">Home</a>
+
     <button class="dropdown-btn">About ▼</button>
     <div class="dropdown-container">
-        <a href="#about" onclick="closeSidebar()">About Us</a>
+        <a href="#" onclick="showHome()">About Us</a>
     </div>
+
     <button class="dropdown-btn">Services ▼</button>
     <div class="dropdown-container">
-        <a href="#services" onclick="closeSidebar()">Our Services</a>
-        <a href="#gallery" onclick="closeSidebar()">Gallery</a>
+        <a href="#" onclick="showHome()">Our Services</a>
+        <a href="#" onclick="showHome()">Gallery</a>
     </div>
-    <a href="#contact" onclick="closeSidebar()">Contact</a>
+
+    <!-- NEW CAPACITY MENU -->
+    <a href="#" onclick="showCapacity()">Capacity</a>
+
+    <a href="#" onclick="showHome()">Contact</a>
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="main-content" id="mainContent">
 
-    <section id="home">
-        <h2>Welcome to <strong>AGAMYA</strong></h2>
-        <p>Your trusted partner in aerospace tooling, precision components, and automotive manufacturing.</p>
-    </section>
+    <!-- HOMEPAGE CONTENT -->
+    <div id="homePage">
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>
-            Agamya is a manufacturing partner specializing in aerospace tooling, precision components,
-            and automotive solutions. We deliver high-quality engineering with commitment to accuracy,
-            reliability and customer satisfaction.
-        </p>
-    </section>
+        <section>
+            <h2>Welcome to <strong>AGAMYA</strong></h2>
+            <p>Your trusted partner in aerospace tooling, precision components, and automotive manufacturing.</p>
+        </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="card">
-                <h3>Aerospace Tooling</h3>
-                <p>Precision tooling solutions designed for aerospace industry standards.</p>
-            </div>
-            <div class="card">
-                <h3>Precision Components</h3>
-                <p>Advanced CNC machining and high-accuracy manufacturing solutions.</p>
-            </div>
-            <div class="card">
-                <h3>Automotive Manufacturing</h3>
-                <p>Reliable production support for automotive OEMs and Tier suppliers.</p>
-            </div>
-        </div>
-    </section>
+        <section>
+            <h2>About Us</h2>
+            <p>
+                Agamya specializes in aerospace tooling, precision components,
+                and automotive solutions with commitment to accuracy and reliability.
+            </p>
+        </section>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery">
-            <div class="card">
-                <img src="aerospace.png" alt="Aerospace Machining">
-                <p>Aerospace Machining</p>
+        <section>
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="card">
+                    <h3>Aerospace Tooling</h3>
+                </div>
+                <div class="card">
+                    <h3>Precision Components</h3>
+                </div>
+                <div class="card">
+                    <h3>Automotive Manufacturing</h3>
+                </div>
             </div>
-            <div class="card">
-                <img src="precision.png" alt="Precision Engineering">
-                <p>Precision Engineering</p>
-            </div>
-            <div class="card">
-                <img src="automotive.png" alt="Automotive Components">
-                <p>Automotive Components</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <p><strong>Address:</strong> No.27, 11th Main, 19th Cross, Raghavendra Layout, Kammagondanahalli, Bangalore 560015</p>
-            <p><strong>Email:</strong> agamyaaero@gmail.com</p>
-            <p><strong>Phone:</strong> +91-8217792498</p>
-            <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
+    </div>
 
-            <!-- LinkedIn -->
-            <div style="margin-top:20px;">
-                <p style="margin-bottom:8px;">Follow us on</p>
-                <a href="https://www.linkedin.com/in/agamya-the-art-of-precision-717414392/" target="_blank"
-                   style="display:inline-flex; align-items:center; text-decoration:none; color:#0A66C2; font-weight:bold;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-                         alt="LinkedIn" width="22" style="margin-right:8px;">
-                    LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- CAPACITY SECTION (HIDDEN BY DEFAULT) -->
+    <div id="capacityPage" style="display:none;">
+        <section>
+            <h2>Our Capacity</h2>
+            <p>• Advanced CNC Machines</p>
+            <p>• 3, 4 & 5 Axis Machining</p>
+            <p>• Tight Tolerance: ±0.01mm</p>
+            <p>• Aerospace Grade Materials</p>
+            <p>• Batch & Prototype Production</p>
+        </section>
+    </div>
 
     <footer>
-        <p>Copyright © 2026 Agamya | The Art of Precision - All Rights Reserved</p>
+        <p>Copyright © 2026 Agamya | The Art of Precision</p>
     </footer>
 
 </div>
@@ -294,17 +259,32 @@ var dropdown = document.getElementsByClassName("dropdown-btn");
 for (var i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", function() {
         var dropdownContent = this.nextElementSibling;
-        dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        dropdownContent.style.display =
+            (dropdownContent.style.display === "block") ? "none" : "block";
     });
 }
 
-// Mobile sidebar toggle
+// Toggle Sidebar (Mobile)
 function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
     sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
 }
 
-// Close sidebar after clicking any link (mobile only)
+// Show Capacity Only
+function showCapacity() {
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("capacityPage").style.display = "block";
+    closeSidebar();
+}
+
+// Show Home Again
+function showHome() {
+    document.getElementById("homePage").style.display = "block";
+    document.getElementById("capacityPage").style.display = "none";
+    closeSidebar();
+}
+
+// Close sidebar (mobile)
 function closeSidebar() {
     if(window.innerWidth <= 768) {
         document.getElementById("sidebar").style.left = "-250px";
