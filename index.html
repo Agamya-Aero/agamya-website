@@ -27,10 +27,11 @@ body {
     z-index: 1000;
 }
 
+/* DESKTOP FULL HEIGHT FIX */
 @media screen and (min-width: 769px) {
     .sidebar {
-        height: 100vh;
-        top: 0;
+        height: 100vh; /* ensures sidebar always fills viewport on desktop */
+        top: 0;        /* start from top */
     }
 }
 
@@ -69,14 +70,16 @@ body {
     transition: 0.3s;
 }
 
-/* HEADER */
+/* HEADER BAR WITH LOGO & TAGLINE AT TOP */
 .main-header {
     background: #0f172a;
     color: white;
     padding: 15px 20px;
+    border-radius: 0; /* removed radius */
     position: relative;
 }
 
+/* Hamburger inside header */
 .hamburger {
     font-size: 24px;
     background: none;
@@ -88,17 +91,18 @@ body {
     top: 20px;
 }
 
+/* Container to align logo & tagline with content width */
 .header-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 10px;
+    flex-direction: column; /* stacked vertically */
+    align-items: center;    /* CENTER logo & tagline horizontally */
+    max-width: 900px;       /* same width as main content */
+    margin: 0 auto;         /* center in page */
+    gap: 10px;              /* space between logo and tagline */
 }
 
 .header-container img {
-    height: 150px;
+    height: 150px; /* bigger logo */
 }
 
 .header-container h2 {
@@ -142,6 +146,7 @@ footer {
     text-align: center;
 }
 
+/* BUTTONS */
 .contact-info p {
     margin: 8px 0;
 }
@@ -156,7 +161,7 @@ footer {
     border-radius: 5px;
 }
 
-/* MOBILE */
+/* MEDIA QUERY FOR MOBILE */
 @media screen and (max-width: 768px) {
     .sidebar {
         width: 250px;
@@ -164,11 +169,14 @@ footer {
         position: fixed;
         top: 0;
         left: -250px;
-        padding-top: 60px;
+        padding-top: 60px; /* space for header content */
         z-index: 1000;
     }
     .main-content {
         margin-left: 0;
+    }
+    .header-container {
+        align-items: center; /* keep logo/tagline centered on mobile */
     }
 }
 </style>
@@ -176,6 +184,7 @@ footer {
 
 <body>
 
+<!-- MAIN HEADER WITH LOGO, TAGLINE, AND HAMBURGER -->
 <div class="main-header">
     <button class="hamburger" onclick="toggleSidebar()">☰</button>
     <div class="header-container">
@@ -184,121 +193,103 @@ footer {
     </div>
 </div>
 
+<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-    <a href="#home" onclick="showSection('home')">Home</a>
-
+    <a href="#home" onclick="closeSidebar()">Home</a>
     <button class="dropdown-btn">About ▼</button>
     <div class="dropdown-container">
-        <a href="#about" onclick="showSection('about')">About Us</a>
+        <a href="#about" onclick="closeSidebar()">About Us</a>
     </div>
-
     <button class="dropdown-btn">Services ▼</button>
     <div class="dropdown-container">
-        <a href="#services" onclick="showSection('services')">Our Services</a>
-        <a href="#capacity" onclick="showSection('capacity')">Capacity</a>
-        <a href="#gallery" onclick="showSection('gallery')">Gallery</a>
+        <a href="#services" onclick="closeSidebar()">Our Services</a>
+        <a href="#gallery" onclick="closeSidebar()">Gallery</a>
     </div>
-
-    <a href="#contact" onclick="showSection('contact')">Contact</a>
+    <a href="#contact" onclick="closeSidebar()">Contact</a>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="main-content" id="mainContent">
 
-<section id="home">
-    <h2>Welcome to <strong>AGAMYA</strong></h2>
-    <p>Your trusted partner in aerospace tooling, precision components, and automotive manufacturing.</p>
-</section>
+    <section id="home">
+        <h2>Welcome to <strong>AGAMYA</strong></h2>
+        <p>Your trusted partner in aerospace tooling, precision components, and automotive manufacturing.</p>
+    </section>
 
-<section id="about" style="display:none;">
-    <h2>About Us</h2>
-    <p>
-        Agamya is a manufacturing partner specializing in aerospace tooling, precision components,
-        and automotive solutions. We deliver high-quality engineering with commitment to accuracy,
-        reliability and customer satisfaction.
-    </p>
-</section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Agamya is a manufacturing partner specializing in aerospace tooling, precision components,
+            and automotive solutions. We deliver high-quality engineering with commitment to accuracy,
+            reliability and customer satisfaction.
+        </p>
+    </section>
 
-<section id="services" style="display:none;">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Aerospace Tooling</h3>
-            <p>Precision tooling solutions designed for aerospace industry standards.</p>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Aerospace Tooling</h3>
+                <p>Precision tooling solutions designed for aerospace industry standards.</p>
+            </div>
+            <div class="card">
+                <h3>Precision Components</h3>
+                <p>Advanced CNC machining and high-accuracy manufacturing solutions.</p>
+            </div>
+            <div class="card">
+                <h3>Automotive Manufacturing</h3>
+                <p>Reliable production support for automotive OEMs and Tier suppliers.</p>
+            </div>
         </div>
-        <div class="card">
-            <h3>Precision Components</h3>
-            <p>Advanced CNC machining and high-accuracy manufacturing solutions.</p>
-        </div>
-        <div class="card">
-            <h3>Automotive Manufacturing</h3>
-            <p>Reliable production support for automotive OEMs and Tier suppliers.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="capacity" style="display:none;">
-    <h2>Our Capacity</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Advanced CNC Machining</h3>
-            <p>High precision machining with tight tolerances.</p>
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="card">
+                <img src="aerospace.png" alt="Aerospace Machining">
+                <p>Aerospace Machining</p>
+            </div>
+            <div class="card">
+                <img src="precision.png" alt="Precision Engineering">
+                <p>Precision Engineering</p>
+            </div>
+            <div class="card">
+                <img src="automotive.png" alt="Automotive Components">
+                <p>Automotive Components</p>
+            </div>
         </div>
-        <div class="card">
-            <h3>5-Axis Capability</h3>
-            <p>Complex aerospace and automotive components manufacturing.</p>
-        </div>
-        <div class="card">
-            <h3>Prototype & Batch Production</h3>
-            <p>Flexible production capacity for small and medium batches.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="gallery" style="display:none;">
-    <h2>Gallery</h2>
-    <div class="gallery">
-        <div class="card">
-            <img src="aerospace.png" alt="Aerospace Machining">
-            <p>Aerospace Machining</p>
-        </div>
-        <div class="card">
-            <img src="precision.png" alt="Precision Engineering">
-            <p>Precision Engineering</p>
-        </div>
-        <div class="card">
-            <img src="automotive.png" alt="Automotive Components">
-            <p>Automotive Components</p>
-        </div>
-    </div>
-</section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Address:</strong> No.27, 11th Main, 19th Cross, Raghavendra Layout, Kammagondanahalli, Bangalore 560015</p>
+            <p><strong>Email:</strong> agamyaaero@gmail.com</p>
+            <p><strong>Phone:</strong> +91-8217792498</p>
+            <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
 
-<section id="contact" style="display:none;">
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-        <p><strong>Address:</strong> No.27, 11th Main, 19th Cross, Raghavendra Layout, Kammagondanahalli, Bangalore 560015</p>
-        <p><strong>Email:</strong> agamyaaero@gmail.com</p>
-        <p><strong>Phone:</strong> +91-8217792498</p>
-        <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
-
-        <div style="margin-top:20px;">
-            <p style="margin-bottom:8px;">Follow us on</p>
-            <a href="https://www.linkedin.com/in/agamya-the-art-of-precision-717414392/" target="_blank"
-               style="display:inline-flex; align-items:center; text-decoration:none; color:#0A66C2; font-weight:bold;">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-                     alt="LinkedIn" width="22" style="margin-right:8px;">
-                LinkedIn
-            </a>
+            <!-- LinkedIn -->
+            <div style="margin-top:20px;">
+                <p style="margin-bottom:8px;">Follow us on</p>
+                <a href="https://www.linkedin.com/in/agamya-the-art-of-precision-717414392/" target="_blank"
+                   style="display:inline-flex; align-items:center; text-decoration:none; color:#0A66C2; font-weight:bold;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                         alt="LinkedIn" width="22" style="margin-right:8px;">
+                    LinkedIn
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <p>Copyright © 2026 Agamya | The Art of Precision - All Rights Reserved</p>
-</footer>
+    <footer>
+        <p>Copyright © 2026 Agamya | The Art of Precision - All Rights Reserved</p>
+    </footer>
 
 </div>
 
 <script>
+// Dropdown toggle
 var dropdown = document.getElementsByClassName("dropdown-btn");
 for (var i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", function() {
@@ -307,18 +298,15 @@ for (var i = 0; i < dropdown.length; i++) {
     });
 }
 
+// Mobile sidebar toggle
 function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
     sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
 }
 
-function showSection(sectionId) {
-    var sections = document.querySelectorAll("#mainContent section");
-    sections.forEach(function(section) {
-        section.style.display = "none";
-    });
-    document.getElementById(sectionId).style.display = "block";
-    if(window.innerWidth <= 768){
+// Close sidebar after clicking any link (mobile only)
+function closeSidebar() {
+    if(window.innerWidth <= 768) {
         document.getElementById("sidebar").style.left = "-250px";
     }
 }
