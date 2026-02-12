@@ -200,11 +200,13 @@ footer {
     <div class="dropdown-container">
         <a href="#about" onclick="closeSidebar()">About Us</a>
     </div>
-    <button class="dropdown-btn">Services ▼</button>
-    <div class="dropdown-container">
-        <a href="#services" onclick="closeSidebar()">Our Services</a>
-        <a href="#gallery" onclick="closeSidebar()">Gallery</a>
-    </div>
+   <button class="dropdown-btn">Services ▼</button>
+<div class="dropdown-container">
+    <a href="#services" onclick="closeSidebar()">Our Services</a>
+    <a href="#capability" onclick="closeSidebar()">Capability</a>
+    <a href="#gallery" onclick="closeSidebar()">Gallery</a>
+</div>
+
     <a href="#contact" onclick="closeSidebar()">Contact</a>
 </div>
 
@@ -226,24 +228,72 @@ footer {
     </section>
 
     <section id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="card">
-                <h3>Aerospace Tooling</h3>
-                <p>Precision tooling solutions designed for aerospace industry standards.</p>
-            </div>
-            <div class="card">
-                <h3>Precision Components</h3>
-                <p>Advanced CNC machining and high-accuracy manufacturing solutions.</p>
-            </div>
-            <div class="card">
-                <h3>Automotive Manufacturing</h3>
-                <p>Reliable production support for automotive OEMs and Tier suppliers.</p>
-            </div>
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Aerospace Tooling</h3>
+            <p>Precision tooling solutions designed for aerospace industry standards.</p>
         </div>
-    </section>
+        <div class="card">
+            <h3>Precision Components</h3>
+            <p>Advanced CNC machining and high-accuracy manufacturing solutions.</p>
+        </div>
+        <div class="card">
+            <h3>Automotive Manufacturing</h3>
+            <p>Reliable production support for automotive OEMs and Tier suppliers.</p>
+        </div>
+    </div>
+</section>
 
-    <section id="gallery">
+<!-- NEW CAPABILITY SECTION ADDED -->
+<section id="capability">
+    <h2>Our Capability</h2>
+
+    <div style="background:#0b1c3d; padding:50px 20px; margin-top:20px;">
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px;">
+
+            <!-- CNC MILLING -->
+            <div style="max-width:320px; color:white;">
+                <img src="milling.png" alt="CNC Milling" style="width:100%; margin-bottom:20px;">
+                <h3 style="color:#00bfff;">CNC MILLING</h3>
+                <ul style="text-align:left; line-height:1.6;">
+                    <li>Cosmos CVM800 with 4th Axes</li>
+                    <li>Cosmos CVM800 – 3 Axes</li>
+                    <li>Mitsubishi (500 x 1000 x 600 mm)</li>
+                    <li>Hurco VM20i – 3 Axes</li>
+                </ul>
+            </div>
+
+            <!-- CNC TURNING -->
+            <div style="max-width:320px; color:white;">
+                <img src="turning.png" alt="CNC Turning" style="width:100%; margin-bottom:20px;">
+                <h3 style="color:#00bfff;">CNC TURNING</h3>
+                <ul style="text-align:left; line-height:1.6;">
+                    <li>Tsugami M08J</li>
+                    <li>Askar Spinner 22</li>
+                    <li>Hyundai Wia LV850R</li>
+                </ul>
+            </div>
+
+            <!-- TIG WELDING -->
+            <div style="max-width:320px; color:white;">
+                <img src="welding.png" alt="TIG Welding" style="width:100%; margin-bottom:20px;">
+                <h3 style="color:#00bfff;">TIG WELDING</h3>
+                <p style="text-align:left; line-height:1.6;">
+                    End-to-end fabrication solutions meeting stringent aerospace standards.
+                    Specialized in Carbon Steel, Stainless Steel, High Alloy Steel and Aluminium
+                    with AWS certified welders.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="gallery">
+
         <h2>Gallery</h2>
         <div class="gallery">
             <div class="card">
