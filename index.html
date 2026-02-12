@@ -14,66 +14,26 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
     color: #333;
-    padding-top: 190px; /* Space for fixed header */
-}
-
-/* FIXED HEADER */
-.main-header {
-    background: #0f172a;
-    color: white;
-    padding: 15px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2000;
-}
-
-/* Hamburger */
-.hamburger {
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-}
-
-/* Header content */
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 10px;
-}
-
-.header-container img {
-    height: 150px;
-}
-
-.header-container h2 {
-    font-weight: 600;
-    letter-spacing: 4px;
-    font-size: 18px;
-    margin: 0;
+    padding-top: 140px; /* space for fixed header */
 }
 
 /* SIDEBAR */
 .sidebar {
+    min-height: 100%;
     width: 250px;
     position: fixed;
-    top: 0;
-    left: -250px;
-    height: 100%;
     background-color: #0f172a;
-    padding-top: 200px;
+    padding-top: 40px;
     transition: 0.3s;
     overflow-x: hidden;
-    z-index: 1500;
+    z-index: 1000;
+}
+
+@media screen and (min-width: 769px) {
+    .sidebar {
+        height: 100vh;
+        top: 0;
+    }
 }
 
 .sidebar a, .dropdown-btn {
@@ -105,7 +65,54 @@ body {
 
 /* MAIN CONTENT */
 .main-content {
+    margin-left: 250px;
     transition: 0.3s;
+}
+
+/* FIXED HEADER */
+.main-header {
+    background: #0f172a;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
+/* Hamburger */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+/* Align header content with main content */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin-left: 250px; /* align with main content */
+    padding-right: 20px;
+    gap: 6px;
+}
+
+.header-container img {
+    height: 110px; /* slightly reduced for better balance */
+}
+
+.header-container h2 {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 16px;
+    margin: 0;
 }
 
 /* SECTIONS */
@@ -141,6 +148,7 @@ footer {
     text-align: center;
 }
 
+/* BUTTONS */
 .contact-info p {
     margin: 8px 0;
 }
@@ -155,13 +163,29 @@ footer {
     border-radius: 5px;
 }
 
-/* DESKTOP SIDEBAR ALWAYS VISIBLE */
-@media screen and (min-width: 769px) {
-    .sidebar {
-        left: 0;
+/* MOBILE */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 130px;
     }
+
+    .sidebar {
+        width: 250px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        padding-top: 100px;
+        z-index: 1000;
+    }
+
     .main-content {
-        margin-left: 250px;
+        margin-left: 0;
+    }
+
+    .header-container {
+        margin-left: 0;
+        align-items: center;
     }
 }
 </style>
@@ -180,111 +204,100 @@ footer {
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-    <a href="#" onclick="showHome()">Home</a>
+    <a href="#home" onclick="closeSidebar()">Home</a>
 
     <button class="dropdown-btn">About ▼</button>
     <div class="dropdown-container">
-        <a href="#" onclick="showHome()">About Us</a>
+        <a href="#about" onclick="closeSidebar()">About Us</a>
     </div>
 
     <button class="dropdown-btn">Services ▼</button>
     <div class="dropdown-container">
-        <a href="#" onclick="showHome()">Our Services</a>
-        <a href="#" onclick="showHome()">Gallery</a>
+        <a href="#services" onclick="closeSidebar()">Our Services</a>
+        <a href="#gallery" onclick="closeSidebar()">Gallery</a>
     </div>
 
-    <!-- NEW CAPACITY MENU -->
-    <a href="#" onclick="showCapacity()">Capacity</a>
-
-    <a href="#" onclick="showHome()">Contact</a>
+    <a href="#contact" onclick="closeSidebar()">Contact</a>
 </div>
 
 <!-- MAIN CONTENT -->
-<div class="main-content" id="mainContent">
+<div class="main-content">
 
-    <!-- HOMEPAGE CONTENT -->
-    <div id="homePage">
+<section id="home">
+    <h2>Welcome to <strong>AGAMYA</strong></h2>
+    <p>Your trusted partner in aerospace tooling, precision components, and automotive manufacturing.</p>
+</section>
 
-        <section>
-            <h2>Welcome to <strong>AGAMYA</strong></h2>
-            <p>Your trusted partner in aerospace tooling, precision components, and automotive manufacturing.</p>
-        </section>
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Agamya is a manufacturing partner specializing in aerospace tooling,
+        precision components, and automotive solutions.
+    </p>
+</section>
 
-        <section>
-            <h2>About Us</h2>
-            <p>
-                Agamya specializes in aerospace tooling, precision components,
-                and automotive solutions with commitment to accuracy and reliability.
-            </p>
-        </section>
-
-        <section>
-            <h2>Our Services</h2>
-            <div class="services">
-                <div class="card">
-                    <h3>Aerospace Tooling</h3>
-                </div>
-                <div class="card">
-                    <h3>Precision Components</h3>
-                </div>
-                <div class="card">
-                    <h3>Automotive Manufacturing</h3>
-                </div>
-            </div>
-        </section>
-
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Aerospace Tooling</h3>
+        </div>
+        <div class="card">
+            <h3>Precision Components</h3>
+        </div>
+        <div class="card">
+            <h3>Automotive Manufacturing</h3>
+        </div>
     </div>
+</section>
 
-    <!-- CAPACITY SECTION (HIDDEN BY DEFAULT) -->
-    <div id="capacityPage" style="display:none;">
-        <section>
-            <h2>Our Capacity</h2>
-            <p>• Advanced CNC Machines</p>
-            <p>• 3, 4 & 5 Axis Machining</p>
-            <p>• Tight Tolerance: ±0.01mm</p>
-            <p>• Aerospace Grade Materials</p>
-            <p>• Batch & Prototype Production</p>
-        </section>
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <div class="card">
+            <img src="aerospace.png" alt="">
+        </div>
+        <div class="card">
+            <img src="precision.png" alt="">
+        </div>
+        <div class="card">
+            <img src="automotive.png" alt="">
+        </div>
     </div>
+</section>
 
-    <footer>
-        <p>Copyright © 2026 Agamya | The Art of Precision</p>
-    </footer>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+        <p><strong>Address:</strong> Bangalore 560015</p>
+        <p><strong>Email:</strong> agamyaaero@gmail.com</p>
+        <p><strong>Phone:</strong> +91-8217792498</p>
+        <a href="mailto:agamyaaero@gmail.com" class="btn">Send Email</a>
+    </div>
+</section>
+
+<footer>
+    <p>Copyright © 2026 Agamya | The Art of Precision</p>
+</footer>
 
 </div>
 
 <script>
-// Dropdown toggle
 var dropdown = document.getElementsByClassName("dropdown-btn");
 for (var i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", function() {
         var dropdownContent = this.nextElementSibling;
         dropdownContent.style.display =
-            (dropdownContent.style.display === "block") ? "none" : "block";
+        (dropdownContent.style.display === "block") ? "none" : "block";
     });
 }
 
-// Toggle Sidebar (Mobile)
 function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
-    sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+    sidebar.style.left =
+    (sidebar.style.left === "0px") ? "-250px" : "0px";
 }
 
-// Show Capacity Only
-function showCapacity() {
-    document.getElementById("homePage").style.display = "none";
-    document.getElementById("capacityPage").style.display = "block";
-    closeSidebar();
-}
-
-// Show Home Again
-function showHome() {
-    document.getElementById("homePage").style.display = "block";
-    document.getElementById("capacityPage").style.display = "none";
-    closeSidebar();
-}
-
-// Close sidebar (mobile)
 function closeSidebar() {
     if(window.innerWidth <= 768) {
         document.getElementById("sidebar").style.left = "-250px";
