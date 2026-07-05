@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AGAMYA AEROTECH</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -25,7 +25,7 @@ header {
 }
 
 header img {
-    height:75px;
+    height:60px;
 }
 
 nav a {
@@ -50,6 +50,10 @@ nav a:hover {
     align-items:center;
     justify-content:center;
     text-align:center;
+}
+
+.hero h1 {
+    font-size:42px;
 }
 
 .fade-text {
@@ -83,10 +87,21 @@ section {
     border-radius:10px;
 }
 
-/* VISION MISSION */
+.cap-card img {
+    width:100%;
+}
+
+/* VISION MISSION BOX */
+.vm-container {
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+    margin-top:30px;
+}
+
 .vm-box {
-    background:#d9d9d9;
-    color:#000;
+    background:#132a57;
     padding:25px;
     width:350px;
     border-radius:10px;
@@ -98,113 +113,166 @@ section {
     padding:40px;
 }
 
-.footer a {
-    display:block;
+.footer-container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-column {
+    width:200px;
+}
+
+.footer h3 {
+    margin-bottom:15px;
+}
+
+.footer p {
     color:#ccc;
-    text-decoration:none;
-    margin:5px 0;
+    font-size:14px;
 }
 
-.footer a:hover {
-    color:white;
-}
-
-/* FLOAT BUTTONS */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:55px;
-}
-
-.emailbtn {
-    position:fixed;
-    bottom:90px;
-    right:20px;
-    width:55px;
+.footer-bottom {
+    margin-top:30px;
+    border-top:1px solid #333;
+    padding-top:15px;
+    text-align:center;
+    font-size:13px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<img src="NEW_LOGO1.png">
-<nav>
-<a href="#">Home</a>
-<a href="#about">About Us</a>
-<a href="#capability">Capabilities</a>
-<a href="contact.html">Contact Us</a>
-</nav>
+    <img src="NEW_LOGO1.png">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#capability">Capabilities</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Offerings</a>
+    </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<div>
-<h1>Welcome to AGAMYA AEROTECH</h1>
-<p class="fade-text">Engineering Precision. Delivering Excellence.</p>
-</div>
+    <div>
+        <h1>Welcome to AGAMYA AEROTECH</h1>
+        <p class="fade-text">Engineering Precision. Delivering Excellence.</p>
+    </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
 <h2>About Us</h2>
-<p>We specialize in aerospace and automotive precision manufacturing.</p>
+<p>We specialize in aerospace and automotive precision manufacturing, tooling, and advanced engineering solutions.</p>
 </section>
 
+<!-- VISION & MISSION -->
 <section>
 <h2>Vision & Mission</h2>
 
-<div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;">
+<div class="vm-container">
 
 <div class="vm-box">
 <h3>Vision</h3>
-<p>To become a trusted global manufacturing solutions partner...</p>
+<p>
+To become a trusted global manufacturing solutions partner for the aerospace and automotive industries, recognized for precision, compliance, and delivery excellence.
+</p>
 </div>
 
 <div class="vm-box">
 <h3>Mission</h3>
-<p>To manufacture high-precision aerospace and automotive components...</p>
+<p>
+To manufacture high-precision aerospace and automotive components by deploying disciplined processes, skilled manpower, and compliant systems, ensuring safety, quality, cost competitiveness, and on-time delivery.
+</p>
 </div>
 
 </div>
 </section>
 
+<!-- CAPABILITIES -->
 <section id="capability">
 <h2>Capabilities</h2>
 
 <div class="capability">
-<div class="cap-card"><h3>CNC Milling</h3></div>
-<div class="cap-card"><h3>CNC Turning</h3></div>
-<div class="cap-card"><h3>EDM</h3></div>
+
+<div class="cap-card">
+<img src="milling.png">
+<h3>CNC Milling</h3>
+<p>High precision multi-axis machining</p>
 </div>
+
+<div class="cap-card">
+<img src="turning.png">
+<h3>CNC Turning</h3>
+<p>Accurate and efficient turning operations</p>
+</div>
+
+<div class="cap-card">
+<img src="edm.png">
+<h3>EDM</h3>
+<p>Wirecut and spark erosion for complex parts</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+
+<p>
+NO 154, 14TH CROSS, BYRAVESHWARA INDUSTRIAL ESTATE<br>
+ANDRAHALLI MAIN ROAD, VISHWANEEDAM POST<br>
+BENGALURU - 560091
+</p>
+
+<p>Email: agamyaaero@gmail.com</p>
+<p>Phone: +91-8217792498</p>
 
 </section>
 
+<!-- FOOTER -->
 <div class="footer">
 
+<div class="footer-container">
+
+<div class="footer-column">
+<p>Leading aerospace and automotive manufacturing solutions with precision engineering and quality excellence.</p>
+</div>
+
+<div class="footer-column">
 <h3>Company</h3>
-<a href="overview.html">Overview</a>
-<a href="leadership.html">Leadership</a>
-<a href="careers.html">Careers</a>
+<p>Overview</p>
+<p>Leadership</p>
+<p>Careers</p>
+</div>
 
+<div class="footer-column">
 <h3>Offerings</h3>
-<a href="aerospace.html">Aerospace Tooling</a>
-<a href="automotive.html">Automotive Components</a>
+<p>Aerospace Tooling</p>
+<p>Automotive Components</p>
+<p>Manufacturing</p>
+</div>
 
+<div class="footer-column">
 <h3>Quick Links</h3>
-<a href="contact.html">Contact</a>
-<a href="enquiry.html">Enquiry</a>
-<a href="certifications.html">Certifications</a>
+<p>Contact</p>
+<p>Certifications</p>
+</div>
 
 </div>
 
-<!-- FLOAT ICON BUTTONS -->
-<a href="https://wa.me/918217792498">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="whatsapp">
-</a>
+<div class="footer-bottom">
+© 2026 AGAMYA AEROTECH
+</div>
 
-<a href="mailto:agamyaaero@gmail.com">
-<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="emailbtn">
-</a>
+</div>
 
 </body>
 </html>
