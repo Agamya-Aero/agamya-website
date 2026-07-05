@@ -8,271 +8,290 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* GLOBAL */
 body {
     margin:0;
     font-family: 'Montserrat', sans-serif;
-    background:#0b1c3d;
-    color:white;
+    background:#e5e7ea;
+    color:#222;
 }
 
-/* HEADER */
+h2 {
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+/* NAVBAR */
 header {
+    position:sticky;
+    top:0;
+    background:#ffffff;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 40px;
-    background:#08142b;
+    padding:12px 50px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
 }
 
 header img {
-    height:60px;
+    height:90px;
 }
 
 nav a {
-    color:white;
     margin:0 15px;
     text-decoration:none;
-    font-size:14px;
+    color:#222;
+    font-weight:500;
 }
 
 nav a:hover {
-    color:#00bcd4;
+    color:#0077cc;
 }
 
 /* HERO */
 .hero {
-    height:90vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url('aerospace.png');
     background-size:cover;
     background-position:center;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
+    color:white;
 }
 
 .hero h1 {
-    font-size:42px;
+    font-size:48px;
 }
 
-.fade-text {
-    opacity:0;
-    animation:fadeIn 3s forwards;
+.hero p {
+    font-size:18px;
+    animation:fadeIn 3s;
 }
 
 @keyframes fadeIn {
-    from {opacity:0; transform:translateY(20px);}
-    to {opacity:1; transform:translateY(0);}
+    from {opacity:0;}
+    to {opacity:1;}
 }
 
 /* SECTION */
 section {
-    padding:60px 20px;
-    text-align:center;
+    padding:80px 10%;
+}
+
+/* CARDS */
+.grid {
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card {
+    background:white;
+    padding:25px;
+    width:320px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:translateY(-8px);
 }
 
 /* CAPABILITY */
-.capability {
-    display:flex;
-    flex-wrap:wrap;
-    gap:30px;
-    justify-content:center;
-}
-
-.cap-card {
-    background:#132a57;
-    padding:20px;
-    width:300px;
-    border-radius:10px;
-}
-
-.cap-card img {
+.card img {
     width:100%;
+    border-radius:8px;
 }
 
-/* VISION MISSION BOX */
-.vm-container {
-    display:flex;
-    flex-wrap:wrap;
-    gap:30px;
-    justify-content:center;
-    margin-top:30px;
+/* FORMS */
+form input, form textarea {
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
 }
 
-.vm-box {
-    background:#132a57;
-    padding:25px;
-    width:350px;
-    border-radius:10px;
+form button {
+    background:#0077cc;
+    color:white;
+    padding:12px;
+    border:none;
+    cursor:pointer;
 }
 
 /* FOOTER */
 .footer {
-    background:#0a0f1c;
-    padding:40px;
+    background:#111;
+    color:white;
+    padding:50px 10%;
 }
 
-.footer-container {
+.footer-grid {
     display:flex;
-    flex-wrap:wrap;
     justify-content:space-between;
-    gap:30px;
+    flex-wrap:wrap;
 }
 
-.footer-column {
-    width:200px;
+.footer a {
+    color:#bbb;
+    display:block;
+    margin:5px 0;
+    text-decoration:none;
 }
 
-.footer h3 {
-    margin-bottom:15px;
+.footer a:hover {
+    color:white;
 }
 
-.footer p {
-    color:#ccc;
-    font-size:14px;
+/* FLOAT BUTTONS */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
 }
 
-.footer-bottom {
-    margin-top:30px;
-    border-top:1px solid #333;
-    padding-top:15px;
-    text-align:center;
-    font-size:13px;
+.emailbtn {
+    position:fixed;
+    bottom:80px;
+    right:20px;
+    background:#0077cc;
+    color:white;
+    padding:15px;
+    border-radius:50%;
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-    <img src="NEW_LOGO1.png">
-    <nav>
-        <a href="#">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#capability">Capabilities</a>
-        <a href="#contact">Contact Us</a>
-        <a href="#">Careers</a>
-        <a href="#">Offerings</a>
-    </nav>
+<img src="NEW_LOGO1.png">
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#capability">Capabilities</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-    <div>
-        <h1>Welcome to AGAMYA AEROTECH</h1>
-        <p class="fade-text">Engineering Precision. Delivering Excellence.</p>
-    </div>
+<div>
+<h1>AGAMYA AEROTECH</h1>
+<p>Engineering Precision. Delivering Excellence.</p>
+</div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
 <h2>About Us</h2>
-<p>We specialize in aerospace and automotive precision manufacturing, tooling, and advanced engineering solutions.</p>
+<p>We deliver high precision aerospace and automotive manufacturing solutions with global standards.</p>
 </section>
 
-<!-- VISION & MISSION -->
 <section>
 <h2>Vision & Mission</h2>
 
-<div class="vm-container">
+<div class="grid">
 
-<div class="vm-box">
+<div class="card">
 <h3>Vision</h3>
-<p>
-To become a trusted global manufacturing solutions partner for the aerospace and automotive industries, recognized for precision, compliance, and delivery excellence.
-</p>
+<p>To become a trusted global manufacturing solutions partner for aerospace and automotive industries.</p>
 </div>
 
-<div class="vm-box">
+<div class="card">
 <h3>Mission</h3>
-<p>
-To manufacture high-precision aerospace and automotive components by deploying disciplined processes, skilled manpower, and compliant systems, ensuring safety, quality, cost competitiveness, and on-time delivery.
-</p>
+<p>To manufacture high-precision components ensuring quality, safety and delivery excellence.</p>
 </div>
 
 </div>
 </section>
 
-<!-- CAPABILITIES -->
 <section id="capability">
 <h2>Capabilities</h2>
 
-<div class="capability">
+<div class="grid">
 
-<div class="cap-card">
+<div class="card">
 <img src="milling.png">
 <h3>CNC Milling</h3>
-<p>High precision multi-axis machining</p>
 </div>
 
-<div class="cap-card">
+<div class="card">
 <img src="turning.png">
 <h3>CNC Turning</h3>
-<p>Accurate and efficient turning operations</p>
 </div>
 
-<div class="cap-card">
+<div class="card">
 <img src="edm.png">
 <h3>EDM</h3>
-<p>Wirecut and spark erosion for complex parts</p>
 </div>
 
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 <h2>Contact Us</h2>
 
-<p>
-NO 154, 14TH CROSS, BYRAVESHWARA INDUSTRIAL ESTATE<br>
-ANDRAHALLI MAIN ROAD, VISHWANEEDAM POST<br>
-BENGALURU - 560091
-</p>
-
-<p>Email: agamyaaero@gmail.com</p>
-<p>Phone: +91-8217792498</p>
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Message"></textarea>
+<button>Send Message</button>
+</form>
 
 </section>
 
-<!-- FOOTER -->
+<section>
+<h2>Enquiry</h2>
+
+<form>
+<input type="text" placeholder="Company Name">
+<input type="text" placeholder="Requirement">
+<textarea placeholder="Details"></textarea>
+<button>Submit Enquiry</button>
+</form>
+
+</section>
+
 <div class="footer">
 
-<div class="footer-container">
+<div class="footer-grid">
 
-<div class="footer-column">
-<p>Leading aerospace and automotive manufacturing solutions with precision engineering and quality excellence.</p>
-</div>
-
-<div class="footer-column">
+<div>
 <h3>Company</h3>
-<p>Overview</p>
-<p>Leadership</p>
-<p>Careers</p>
+<a href="overview.html">Overview</a>
+<a href="leadership.html">Leadership</a>
+<a href="careers.html">Careers</a>
 </div>
 
-<div class="footer-column">
+<div>
 <h3>Offerings</h3>
-<p>Aerospace Tooling</p>
-<p>Automotive Components</p>
-<p>Manufacturing</p>
+<a href="aerospace.html">Aerospace Tooling</a>
+<a href="automotive.html">Automotive Components</a>
 </div>
 
-<div class="footer-column">
+<div>
 <h3>Quick Links</h3>
-<p>Contact</p>
-<p>Certifications</p>
+<a href="#contact">Contact</a>
+<a href="certifications.html">Certifications</a>
 </div>
 
 </div>
 
-<div class="footer-bottom">
-© 2026 AGAMYA AEROTECH
 </div>
 
-</div>
+<a href="https://wa.me/918217792498" class="whatsapp">W</a>
+<a href="mailto:agamyaaero@gmail.com" class="emailbtn">@</a>
 
 </body>
 </html>
