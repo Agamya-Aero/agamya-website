@@ -5,78 +5,140 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AGAMYA AEROTECH</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0a192f;
-    color: white;
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    background:#0b1c3d;
+    color:white;
 }
 
+/* HEADER */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 50px;
-    background: #020c1b;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#08142b;
 }
 
 header img {
-    height: 60px;
+    height:60px;
 }
 
 nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-size:14px;
 }
 
+nav a:hover {
+    color:#00bcd4;
+}
+
+/* HERO */
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+    url('aerospace.png');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size:42px;
 }
 
-.hero p {
-    font-size: 20px;
-    color: #ccc;
+.fade-text {
+    opacity:0;
+    animation:fadeIn 3s forwards;
 }
 
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* SECTION */
 section {
-    padding: 60px 40px;
-    text-align: center;
+    padding:60px 20px;
+    text-align:center;
 }
 
-h2 {
-    color: #00bfff;
+/* CAPABILITY */
+.capability {
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+.cap-card {
+    background:#132a57;
+    padding:20px;
+    width:300px;
+    border-radius:10px;
 }
 
-.card {
-    background: #112240;
-    padding: 25px;
-    width: 300px;
-    border-radius: 10px;
+.cap-card img {
+    width:100%;
 }
 
-footer {
-    background: #020c1b;
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
+/* VISION MISSION BOX */
+.vm-container {
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.vm-box {
+    background:#132a57;
+    padding:25px;
+    width:350px;
+    border-radius:10px;
+}
+
+/* FOOTER */
+.footer {
+    background:#0a0f1c;
+    padding:40px;
+}
+
+.footer-container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-column {
+    width:200px;
+}
+
+.footer h3 {
+    margin-bottom:15px;
+}
+
+.footer p {
+    color:#ccc;
+    font-size:14px;
+}
+
+.footer-bottom {
+    margin-top:30px;
+    border-top:1px solid #333;
+    padding-top:15px;
+    text-align:center;
+    font-size:13px;
 }
 </style>
 </head>
@@ -85,69 +147,132 @@ footer {
 
 <!-- HEADER -->
 <header>
-    <img src="NEW_LOGO.png" alt="AGAMYA AEROTECH Logo">
+    <img src="NEW_LOGO1.png">
     <nav>
         <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#vision">Vision</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About Us</a>
+        <a href="#capability">Capabilities</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Offerings</a>
     </nav>
 </header>
 
 <!-- HERO -->
-<div class="hero">
-    <h1>AGAMYA AEROTECH</h1>
-    <p>Precision Manufacturing for Aerospace & Automotive Industries</p>
-</div>
+<section class="hero">
+    <div>
+        <h1>Welcome to AGAMYA AEROTECH</h1>
+        <p class="fade-text">Engineering Precision. Delivering Excellence.</p>
+    </div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
-    <h2>About Us</h2>
-    <p>
-        AGAMYA AEROTECH is a precision manufacturing company specializing in aerospace and automotive components,
-        delivering high-quality engineering solutions with a focus on accuracy, compliance, and reliability.
-    </p>
+<h2>About Us</h2>
+<p>We specialize in aerospace and automotive precision manufacturing, tooling, and advanced engineering solutions.</p>
 </section>
 
 <!-- VISION & MISSION -->
-<section id="vision">
-    <h2>Vision & Mission</h2>
+<section>
+<h2>Vision & Mission</h2>
 
-    <div class="cards">
+<div class="vm-container">
 
-        <div class="card">
-            <h3>Vision</h3>
-            <p>
-                To become a trusted global manufacturing solutions partner for the aerospace and automotive industries,
-                recognized for precision, compliance, and delivery excellence.
-            </p>
-        </div>
+<div class="vm-box">
+<h3>Vision</h3>
+<p>
+To become a trusted global manufacturing solutions partner for the aerospace and automotive industries, recognized for precision, compliance, and delivery excellence.
+</p>
+</div>
 
-        <div class="card">
-            <h3>Mission</h3>
-            <p>
-                To manufacture high-precision aerospace and automotive components by deploying disciplined processes,
-                skilled manpower, and compliant systems, ensuring safety, quality, cost competitiveness, and on-time delivery.
-            </p>
-        </div>
+<div class="vm-box">
+<h3>Mission</h3>
+<p>
+To manufacture high-precision aerospace and automotive components by deploying disciplined processes, skilled manpower, and compliant systems, ensuring safety, quality, cost competitiveness, and on-time delivery.
+</p>
+</div>
 
-    </div>
+</div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capability">
+<h2>Capabilities</h2>
+
+<div class="capability">
+
+<div class="cap-card">
+<img src="milling.png">
+<h3>CNC Milling</h3>
+<p>High precision multi-axis machining</p>
+</div>
+
+<div class="cap-card">
+<img src="turning.png">
+<h3>CNC Turning</h3>
+<p>Accurate and efficient turning operations</p>
+</div>
+
+<div class="cap-card">
+<img src="edm.png">
+<h3>EDM</h3>
+<p>Wirecut and spark erosion for complex parts</p>
+</div>
+
+</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact Us</h2>
-    <p>
-        NO 154, 14TH CROSS, BYRAVESHWARA<br>
-        INDUSTRIAL ESTATE, ANDRAHALLI MAIN ROAD<br>
-        VISHWANEEDAM POST, BENGALURU - 560091
-    </p>
+<h2>Contact Us</h2>
+
+<p>
+NO 154, 14TH CROSS, BYRAVESHWARA INDUSTRIAL ESTATE<br>
+ANDRAHALLI MAIN ROAD, VISHWANEEDAM POST<br>
+BENGALURU - 560091
+</p>
+
+<p>Email: agamyaaero@gmail.com</p>
+<p>Phone: +91-8217792498</p>
+
 </section>
 
 <!-- FOOTER -->
-<footer>
-    <p>© 2026 AGAMYA AEROTECH. All Rights Reserved.</p>
-</footer>
+<div class="footer">
+
+<div class="footer-container">
+
+<div class="footer-column">
+<p>Leading aerospace and automotive manufacturing solutions with precision engineering and quality excellence.</p>
+</div>
+
+<div class="footer-column">
+<h3>Company</h3>
+<p>Overview</p>
+<p>Leadership</p>
+<p>Careers</p>
+</div>
+
+<div class="footer-column">
+<h3>Offerings</h3>
+<p>Aerospace Tooling</p>
+<p>Automotive Components</p>
+<p>Manufacturing</p>
+</div>
+
+<div class="footer-column">
+<h3>Quick Links</h3>
+<p>Contact</p>
+<p>Certifications</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 AGAMYA AEROTECH
+</div>
+
+</div>
 
 </body>
 </html>
